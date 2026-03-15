@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>488</width>
+    <height>555</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* 全局基础样式 - 仅用Qt完全支持的属性 */
+QWidget {
+    font-family: &quot;Segoe UI&quot;, Roboto, Arial, sans-serif;
+    font-size: 13px;
+    color: #24292f;
+    background-color: #ffffff;
+}
+
+/* 圆角容器 */
+QWidget#widget {
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+/* 堆叠窗口 */
+QStackedWidget {
+    background-color: transparent;
+}
+
+/* 标签 */
+QLabel {
+    color: #24292f;
+    background-color: transparent;
+}
+QLabel#label {
+    font-weight: 500;
+}
+
+/* 数字输入框 - 移除所有CSS3属性 */
+QSpinBox {
+    min-height: 32px;
+    padding: 0 8px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    background-color: #ffffff;
+    selection-background-color: #0969da;
+    selection-color: #ffffff;
+}
+QSpinBox:hover {
+    border-color: #8c959f;
+}
+QSpinBox:focus {
+    border-color: #0969da;
+    /* 彻底移除box-shadow，用双层边框模拟高光（Qt全版本支持） */
+    border: 2px solid #0969da;
+    padding: 0 7px; /* 抵消边框加宽的间距 */
+}
+/* SpinBox上下箭头 */
+QSpinBox::up-button, QSpinBox::down-button {
+    width: 16px;
+    border: none;
+    background-color: transparent;
+}
+QSpinBox::up-arrow {
+    width: 8px;
+    height: 8px;
+}
+QSpinBox::down-arrow {
+    width: 8px;
+    height: 8px;
+}
+
+/* 复选框 */
+QCheckBox {
+    min-height: 32px;
+    spacing: 8px;
+    background-color: transparent;
+}
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #d0d7de;
+    border-radius: 3px;
+    background-color: #ffffff;
+}
+QCheckBox::indicator:hover {
+    border-color: #8c959f;
+}
+QCheckBox::indicator:checked {
+    background-color: #0969da;
+    border-color: #0969da;
+}
+QCheckBox:checked {
+    color: #24292f;
+}
+
+/* 单行输入框 - 移除所有CSS3属性 */
+QLineEdit {
+    min-height: 32px;
+    padding: 0 12px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    background-color: #ffffff;
+    selection-background-color: #0969da;
+    selection-color: #ffffff;
+}
+QLineEdit:hover {
+    border-color: #8c959f;
+}
+QLineEdit:focus {
+    border-color: #0969da;
+    /* 双层边框模拟高光，替代box-shadow/outline */
+    border: 2px solid #0969da;
+    padding: 0 11px; /* 抵消边框加宽 */
+}
+
+/* 列表视图 */
+QListView {
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    background-color: #ffffff;
+    outline: none;
+    show-decoration-selected: 1;
+}
+QListView::item {
+    padding: 8px 12px;
+    border-bottom: 1px solid #f6f8fa;
+}
+QListView::item:hover {
+    background-color: #f6f8fa;
+}
+QListView::item:selected {
+    background-color: #0969da;
+    color: #ffffff;
+}
+QListView::item:selected:active {
+    background-color: #0858c0;
+}
+
+/* 列表滚动条 */
+QListView QScrollBar:vertical {
+    width: 8px;
+    background-color: transparent;
+}
+QListView QScrollBar::handle:vertical {
+    background-color: #d0d7de;
+    border-radius: 4px;
+    min-height: 20px;
+}
+QListView QScrollBar::handle:vertical:hover {
+    background-color: #8c959f;
+}
+QListView QScrollBar::add-line:vertical, QListView QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+/* 布局容器 */
+QGridLayout, QVBoxLayout, QHBoxLayout {
+    spacing: 8px;
+    margin: 0;
+}
+QWidget#layoutWidget {
+    background-color: transparent;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QStackedWidget" name="stackedWidget">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
+         <widget class="QWidget" name="page">
+          <widget class="QWidget" name="layoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>10</y>
+             <width>169</width>
+             <height>116</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout">
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="text">
+                   <string>最大存储条数：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spinBox"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="checkBox">
+                <property name="text">
+                 <string>AutoRun</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="checkBox_2">
+              <property name="text">
+               <string>自动隐藏</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="page_2">
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <layout class="QGridLayout" name="gridLayout_3">
+             <item row="0" column="0">
+              <widget class="QLineEdit" name="lineEdit"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QListView" name="listView"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>488</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuseting">
+    <property name="title">
+     <string>seting</string>
+    </property>
+    <addaction name="actionsetting"/>
+   </widget>
+   <widget class="QMenu" name="menulist">
+    <property name="title">
+     <string>list</string>
+    </property>
+    <addaction name="actionlist"/>
+   </widget>
+   <addaction name="menuseting"/>
+   <addaction name="menulist"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionsetting">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DocumentProperties"/>
+   </property>
+   <property name="text">
+    <string>setting</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionlist">
+   <property name="text">
+    <string>list</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
